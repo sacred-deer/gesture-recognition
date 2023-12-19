@@ -76,7 +76,7 @@ In this approach, we first need to detect keypoints in a gesture video and then 
 ```gestures_to_keypoints.py``` python script processes the gesture video files and saves the keypoints of each video in a separate CSV file. This script also saves the images marked with extracted keypoints.
 
 ```
-python3 gestures_to_keypoints.py --input --steps_between_frames --path_to_csv --path_to_keypoint_imgs
+python3 gestures_to_keypoints.py --input_path --steps_between_frames --save_path
 ```
 This python script takes 4 arguments:
 1. ```--input_path```: Specify the path to the root directory of the dataset folder i.e. the path of the parent folder which contains train and test folders, according to the directory structure explained above.
@@ -85,10 +85,19 @@ This python script takes 4 arguments:
 
 This script saves the separate CSV files containing keypoints for each video.
 
-### Combining the Keypoint CSV files to create the dataset
-
-
 ### Training and evaluating the Gesture Classifier
+The Jupyter notebook ```Gesture Detection - Feature Engineering - Training.ipynb``` contains the code segments to perform the following:
+1. Train the gesture classifier from scratch using the extracted keypoints
+2. Test the performance of the trained gesture classifier on the test dataset
 
+Please note that one will need to set the directory path variables according to their system, otherwise the code will throw an error. You will need to update the following directory paths in the code:
+- Path to the keypoints dataset (the path to the ```keypoints``` folder which was created after running the ```gestures_to_keypoints.py``` python script)
+- Location to save the trained model and the trained scaler
+- Location of the saved model and the scaler (for the evaluation phase)
 
 ### Getting a prediction on a gesture video
+The Jupyter notebook ```first_approach_demo.ipynb``` is created to get a prediction on gesture video using a pre-trained machine learning model (gesture classifier). The user only needs to update the following paths in the notebook:
+1. Path to the gesture video
+2. Path to the trained model and trained scaler
+
+If one doesn't want to train the model from scratch, the latest version of the trained gesture classifier ```feature_engineering_model.bin``` and the scaler ```scaler.bin``` is provided in the ```trained_models``` folder to utilize for prediction.
