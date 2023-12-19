@@ -16,6 +16,16 @@ In the realm of human interaction, non-verbal communication stands as an indispe
 ```
 pip install -r requirements.txt
 ```
+## Assumptions and Guidelines for Dataset Creation
+
+
+1. There is only a single person in the video clip.
+2. The gestures are performed facing straight toward the camera.
+3. The hand-waving gesture is performed by oscillating the complete arm pivoted at the elbow joint, not waving just the wrist.
+4. At least, the complete upper body is visible during the full length of the video clip and it does not go out of frame during the full length of the video clip.
+5. The distance between the subject and the camera should be within approximately 10 feet.
+6. **The video clip must contain at least 150 frames, preferably duration of 5 seconds @ 30 frames per second (fps).**
+7. The complexity of the ``other" class was limited to rested poses.
 
 ## (Second Approach) Gesture Recognition with an end-to-end deep learning model
 
