@@ -55,6 +55,8 @@ The Jupyter notebook ```gesture_recognition_with_few_shot_learning.ipynb``` is d
 2. Test the deep learning model: This section loads the trained model and tests its performance on the test dataset
 3. Getting a prediction on a gesture video: This section loads the trained model and generates a prediction on a given gesture video
 
+[Note: If you want to run only one section of the notebook, make sure to execute the code before "Training the model" section because those initializations are required for all the sections]
+
 ```gesture_recognition_with_few_shot_learning.ipynb``` contains the comments inside on how to use this notebook. Please note that one will need to set the directory path variables according to their system, otherwise the code will throw an error. You will need to update the following directory paths in the code:
 - Path to the dataset
 - Location to save the trained model
@@ -64,7 +66,9 @@ The Jupyter notebook ```gesture_recognition_with_few_shot_learning.ipynb``` is d
 
 ### Getting a prediction on a gesture video
 
-```gesture_recognition_with_few_shot_learning.ipynb``` contains a section titled "Getting model prediction on a gesture video". This section loads a trained model and predicts the gesture performed in the given gesture video. If one doesn't want to train the model from scratch, the latest version of the trained deep learning model ```gesture_model_v3.pt``` is provided in the ```trained_models``` folder to utilize for prediction.
+```gesture_recognition_with_few_shot_learning.ipynb``` contains a section titled "Getting model prediction on a gesture video". This section loads a trained model and predicts the gesture performed in the given gesture video. [Note: If you want to run only this section of the notebook, make sure to execute the code before "Training the model" section because those initializations are required for all the sections]
+
+If one doesn't want to train the model from scratch, the latest version of the trained deep learning model ```gesture_model_v3.pt``` is provided in the ```trained_models``` folder to utilize for prediction.
 
 
 ## (First Approach) Person Keypoint Detection + Gesture Classifier
