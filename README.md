@@ -17,7 +17,7 @@ In the realm of human interaction, non-verbal communication stands as an indispe
 pip install -r requirements.txt
 ```
 
-## (Approach 2) Gesture Recognition with an end-to-end deep learning model
+## (Second Approach) Gesture Recognition with an end-to-end deep learning model
 
 To train and test the deep learning model, the first step is to generate the annotations for our dataset. The annotations file would be created automatically by running the script ```create_annotation_file.py```. However, this script requires the dataset to be stored in the following directory structure. 
 ```
@@ -67,3 +67,24 @@ The Jupyter notebook ```gesture_recognition_with_few_shot_learning.ipynb``` is d
 ```gesture_recognition_with_few_shot_learning.ipynb``` contains a section titled "Getting model prediction on a gesture video". This section loads a trained model and predicts the gesture performed in the given gesture video. If one doesn't want to train the model from scratch, the latest version of the trained deep learning model ```gesture_model_v3.pt``` is provided in the ```trained_models``` folder to utilize for prediction.
 
 
+## (First Approach) Person Keypoint Detection + Gesture Classifier
+
+In this approach, we first need to detect keypoints in a gesture video and then train a gesture classifier or use a trained gesture classifier for prediction. Therefore, the first step is to detect keypoints of a person in the gesture video
+
+### Generating Keypoints files
+
+```gestures_to_keypoints_batch.py``` python script processes a batch of gesture video files and saves the keypoints of each video in a separate CSV file. This script also saves the images marked with extracted keypoints.
+
+```
+python3 gestures_to_keypoints_batch.py --input --steps_between_frames --path_to_csv --path_to_keypoint_imgs
+```
+This python script takes 4 arguments:
+1. ```--input```: Specify path to folder containing video files. [Note: If one has more than one folder containing video files, one would have to run this script for each folder separately.]
+2. ```--steps_between_frame```: (default = 3) Frames are sampled at regular intervals from the video. This parameter defines the interval between two samples while sampling the frames from the video. [Note: Increase the value of this argument to extract fewer frames (decreases processing time, but might reduce gesture detection accuracy).]
+3. ```--path_to_csv'```: (default = "./keypoints/csvs") Specify the directory to save the CSV files containing keypoints.
+4. ```--path_to_keypoint_imgs```: (default = "./keypoints/keypoints_imgs") Specify the directory to save the images marked with extracted keypoints.
+
+### Combining the Keypoint CSV files to create the dataset
+
+
+### Training and evaluating the Gesture Classifier
