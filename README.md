@@ -73,18 +73,22 @@ In this approach, we first need to detect keypoints in a gesture video and then 
 
 ### Generating Keypoints files
 
-```gestures_to_keypoints_batch.py``` python script processes a batch of gesture video files and saves the keypoints of each video in a separate CSV file. This script also saves the images marked with extracted keypoints.
+```gestures_to_keypoints.py``` python script processes the gesture video files and saves the keypoints of each video in a separate CSV file. This script also saves the images marked with extracted keypoints.
 
 ```
-python3 gestures_to_keypoints_batch.py --input --steps_between_frames --path_to_csv --path_to_keypoint_imgs
+python3 gestures_to_keypoints.py --input --steps_between_frames --path_to_csv --path_to_keypoint_imgs
 ```
 This python script takes 4 arguments:
-1. ```--input```: Specify path to folder containing video files. [Note: If one has more than one folder containing video files, one would have to run this script for each folder separately.]
+1. ```--input_path```: Specify the path to the root directory of the dataset folder. The folder which train and test folders, according to the directory structure explained above.
 2. ```--steps_between_frame```: (default = 3) Frames are sampled at regular intervals from the video. This parameter defines the interval between two samples while sampling the frames from the video. [Note: Increase the value of this argument to extract fewer frames (decreases processing time, but might reduce gesture detection accuracy).]
-3. ```--path_to_csv'```: (default = "./keypoints/csvs") Specify the directory to save the CSV files containing keypoints.
-4. ```--path_to_keypoint_imgs```: (default = "./keypoints/keypoints_imgs") Specify the directory to save the images marked with extracted keypoints.
+3. ```--save_path'```: (default = ".") Specify the directory to save the CSV files containing keypoints.
+
+This script saves the separate CSV files containing keypoints for each video.
 
 ### Combining the Keypoint CSV files to create the dataset
 
 
 ### Training and evaluating the Gesture Classifier
+
+
+### Getting a prediction on a gesture video
