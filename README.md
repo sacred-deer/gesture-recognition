@@ -79,7 +79,7 @@ In this approach, we first need to detect keypoints in a gesture video and then 
 python3 gestures_to_keypoints.py --input --steps_between_frames --path_to_csv --path_to_keypoint_imgs
 ```
 This python script takes 4 arguments:
-1. ```--input_path```: Specify the path to the root directory of the dataset folder. The folder which train and test folders, according to the directory structure explained above.
+1. ```--input_path```: Specify the path to the root directory of the dataset folder i.e. the path of the parent folder which contains train and test folders, according to the directory structure explained above.
 2. ```--steps_between_frame```: (default = 3) Frames are sampled at regular intervals from the video. This parameter defines the interval between two samples while sampling the frames from the video. [Note: Increase the value of this argument to extract fewer frames (decreases processing time, but might reduce gesture detection accuracy).]
 3. ```--save_path'```: (default = ".") Specify the directory to save the CSV files containing keypoints.
 
