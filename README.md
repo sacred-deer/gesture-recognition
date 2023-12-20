@@ -99,6 +99,9 @@ This python script takes 4 arguments:
 
 This script saves the separate CSV files containing keypoints for each video.
 
+### Dataset of Extracted Keypoints
+We have provided a dataset of person keypoints extracted from ~ 300 gesture videos. The folder ```keypoints``` contains the dataset, split into train and test. These keypoints can be used directly to train and test the gesture classifier using the ```Gesture Detection - Feature Engineering - Training.ipynb``` jupyter notebook. 
+
 ### Training and evaluating the Gesture Classifier
 The Jupyter notebook ```Gesture Detection - Feature Engineering - Training.ipynb``` contains the code segments to perform the following:
 1. Train the gesture classifier from scratch using the extracted keypoints
