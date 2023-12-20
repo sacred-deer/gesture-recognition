@@ -106,12 +106,14 @@ The Jupyter notebook ```Gesture Detection - Feature Engineering - Training.ipynb
 
 Please note that one will need to set the directory path variables according to their system, otherwise the code will throw an error. You will need to update the following directory paths in the code:
 - Path to the keypoints dataset (the path to the ```keypoints``` folder which was created after running the ```gestures_to_keypoints.py``` python script)
-- Location to save the trained model and the trained scaler
-- Location of the saved model and the scaler (for the evaluation phase)
+- Location to save the trained model
+- Location of the saved model (for the evaluation phase)
 
 ### Getting a prediction on a gesture video
 The Jupyter notebook ```first_approach_demo.ipynb``` is created to get a prediction on gesture video using a pre-trained machine learning model (gesture classifier). The user only needs to update the following paths in the notebook:
 1. Path to the gesture video
-2. Path to the trained model and trained scaler
+2. Path to the trained model
 
-If one doesn't want to train the model from scratch, the latest version of the trained gesture classifier ```feature_engineering_model.bin``` and the scaler ```scaler.bin``` is provided in the ```trained_models``` folder to utilize for prediction.
+NOTE: DON'T RUN THIS NOTEBOOK ON GOOGLE COLAB. On colab, the python kernel would crash because of insufficient memory. The detection model requires more memory than provided by the free version of colab.
+
+If one doesn't want to train the model from scratch, the latest version of the trained gesture classifier ```feature_engineering_model.sklearn-1-2-2.pickle``` is provided in the ```trained_models``` folder to utilize for prediction.
